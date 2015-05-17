@@ -1,0 +1,35 @@
+# -*- coding: utf-8 -*-
+"""This is a test file for the scramble python function.
+Somehow UTF-8 characters aren't shown correctly in the doctest viewver """
+
+
+
+>>> from hazi import scramble
+
+# Empty string
+>>> scramble('')
+'String cannot be empty!'
+
+#1 word
+>>> scramble('macska')
+u'mkscaa'
+
+#More words
+>>> scramble('csacska macska')
+u'ckscasa mkscaa'
+
+#UTF-8 charsets
+>>> scramble('vak varjúcska')
+u'vak vksc\xfajraa'
+
+#Punctuations
+>>> scramble('Halacska, ebéd!')
+u'Hkscalaa, e\xe9bd!'
+
+#Long sentences
+>>> scramble('Implementation can be done in either Java, C++ or Python. It is important to provide unit tests that prove the working solution.')
+u'Ioitatnemelpmn can be dnoe in eehtir Jvaa, C++ or Pohtyn. It is inatropmt to pdivore uint ttses taht pvore the wnikrog soitulon.'
+
+#It also works backwards
+>>> scramble('Ioitatnemelpmn can be dnoe in eehtir Jvaa, C++ or Pohtyn. It is inatropmt to pdivore uint ttses taht pvore the wnikrog soitulon.')
+u'Implementation can be done in either Java, C++ or Python. It is important to provide unit tests that prove the working solution.'
